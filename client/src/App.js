@@ -5,6 +5,7 @@ import LandingPage from "./pages/LandingPage";
 import { ToastContainer } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 import Role from "./pages/Role";
+import CaseStudy from "./pages/CaseStudy";
 
 function App() {
   
@@ -16,6 +17,7 @@ function App() {
       <Route path="/" element={<LandingPage />} />
           <Route path="/dashboard" element={<Home />} />
           <Route path="/role" element={<Role />} />
+          <Route path="/casestudy" element={<CaseStudy />} />
       </Routes>
     </BrowserRouter>
     </div>

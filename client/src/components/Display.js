@@ -3,13 +3,15 @@ import "./Display.css";
 const Display = ({ contract, account }) => {
   const [data, setData] = useState("");
   const [salt, setsalt] = useState("a6h2")
+
+
   const getdata = async () => {
     let dataArray;
     const Otheraddress = document.querySelector(".address").value;
     try {
       if (Otheraddress) {
         dataArray = await contract.display(Otheraddress);
-        console.log(dataArray);
+        console.log("array",dataArray);
       const generateHash = () => {
           const timestamp = Date.now().toString();
           const randomString = Math.random().toString(36).substring(2, 7);
@@ -28,6 +30,7 @@ const Display = ({ contract, account }) => {
 
     if (!isEmpty) {
       const str = dataArray.toString();
+      console.log(str);
       const str_array = str.split(",");
       console.log("second",str_array);
       const images = str_array.map((item, i) => {
@@ -39,7 +42,6 @@ const Display = ({ contract, account }) => {
               alt="new"
               className="image-list"
             >
-              
             </img>
             <p className="hash-value">{item.split("s/")[1] + salt}</p>
           </a>

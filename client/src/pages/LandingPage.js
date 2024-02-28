@@ -12,7 +12,11 @@ const LandingPage = () => {
         <div className={styles.links}>
           <h3>About</h3>
           <h3>Blogs </h3>
-          <h3>Pages</h3>
+          <h3>
+          <Link to={"/casestudy"}>
+          Case Study
+          </Link>
+          </h3>
           <h3>Contact</h3>
         </div>
         <div>
